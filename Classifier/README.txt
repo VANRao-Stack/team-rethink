@@ -1,0 +1,1 @@
+Rename classifier to 'pytorch_model.bin'
