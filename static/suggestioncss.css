@@ -1,0 +1,158 @@
+:root {
+  --font-family: "Open Sans", Helvetica, Sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 60px;
+  background-color: #282828;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  z-index: 2;
+  position: relative;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  transition: all 0.1s linear;
+}
+nav a:hover {
+  background-color: #1266db;
+}
+nav a.suggestions {
+  /*background-color: #00aeff;*/
+  background-color: #1266db;
+  justify-content: center;
+  margin-left: auto;
+  transition: all 0.4s ease-in-out;
+}
+nav a.suggestions.cancel {
+  /*background-color: lightcoral;*/
+  background-color:#21a2de;
+}
+nav a.suggestions:hover svg {
+  transform: translateX(-3px);
+}
+nav a.suggestions svg {
+  width: 15px;
+  fill: white;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+}
+nav a.suggestions svg.rotate {
+  transform: rotate(90deg);
+}
+
+.suggestion-box {
+  will-change: auto;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  transition: all 0.6s cubic-bezier(0.81, 0.15, 0.24, 1.23);
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.suggestion-box.box-active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.user-info,
+.user-suggestion {
+  flex: 1 1 0;
+  display: flex;
+}
+
+#suggestion-box-form {
+  display: flex;
+  height: 300px;
+}
+@media (max-width: 1000px) {
+  #suggestion-box-form {
+    flex-direction: column;
+    height: 600px;
+  }
+}
+#suggestion-box-form .user-info {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#suggestion-box-form .user-info .name,
+#suggestion-box-form .user-info .email {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+#suggestion-box-form .user-info label {
+  padding-bottom: 10px;
+  align-self: left;
+}
+#suggestion-box-form .user-info input[type="text"],
+#suggestion-box-form .user-info input[type="email"] {
+  font-size: 16px;
+  width: 350px;
+  height: 22px;
+  padding: 16px;
+}
+#suggestion-box-form .user-suggestion {
+  flex: 2 2 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons {
+  margin-top: 10px;
+  text-align: left;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons button {
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  font-family: inherit;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons button:hover {
+  transform: translateY(-2px);
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons button:active {
+  transform: scale(0.98);
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons button[type="Submit"] {
+  background-color: SteelBlue;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-form-buttons button[type="Reset"] {
+  background-color: #21a2de;
+  margin-left: 5px;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+#suggestion-box-form .user-suggestion .user-suggestion-box textarea[name="suggestion"] {
+  font-family: inherit;
+  height: 37%;
+  font-size: 16px;
+  padding: 16px;
+  margin-top: 10px;
+}

@@ -1,0 +1,1 @@
+DOwnload and rename 'zero-shot-classifier.bin' to 'pytorch_model.bin'

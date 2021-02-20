@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<body>
+  <div id="preloader">
+	<div class="father">
+        <div class="f1"></div>
+    </div>
+    <div class="child">
+        <div class="dir-1"></div>
+        <div class="dir-2"></div>
+    </div>
+    <div class="mother">
+        <div class="m1"></div>
+    </div>
+  </div>
+  <div class="whole">
+
+  <div align="right" class="border"> 
+            <div class="header"> 
+                <a href="{{ url_for('logout') }}" class="btn">Logout</a> 
+            </div> 
+  </div>
+
+<header class="bg-image">
+  <div class="container">
+    <h1 id="heading">GEmma</h1>
+    <h2>Efficient | Smart | Responsive</h2>
+    <!--<a href="#" class="btn btn-transparent">Start Here.</a>-->
+  </div>
+</header>
+
+<section class="home">
+  <div class="container">
+    <!--<div class="col-3 text--center">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/366117/8_copy_copy.jpg" alt="" class="details-img--ball" />
+    </div>-->
+    <div class="">
+      <h3>MORE ABOUT US</h3>
+      <h4 id="size"><center>We aim to support our customers in the pursuit of precision of health: health care that is integrated, highly personalised to each patient's needs and reduces easte and inefficiency.</center></h4>
+      <h4 id="size"><center>We present to you GEmma, your very own personal assistant for all queries regarding GE Healthcare's products and services. Towards a healthier world one step at a time, at your service 24x7.</center></h4>
+      <br></br>
+      <!--<br></br>-->
+      <div class="GE"><center><a href="https://www.gehealthcare.com/" id="GE">LEARN MORE ABOUT GE!</a></center></div>
+  <br></br><br></br>    
+
+    </div>
+  </div>
+</section>
+
+<section class="section--primary">
+  <div class="container">
+    <div class="col-3 features">
+      <i class="fa fa-bolt"></i>
+      <p>
+        Have you seen our new MRI?
+      </p>
+      <a class="changecolor" href='https://www.medicalexpo.com/product-manufacturer/ge-ct-scanner-33726-438.html'>Learn More</a>
+    </div>
+    <div class="col-3 features">
+      <i class="fa fa-cogs"></i>
+      <p>
+        New technolgies with our Ultrasound Machine.
+      </p>
+      <a class="changecolor" href='https://www.medicalexpo.com/product-manufacturer/ge-ct-scanner-33726-438.html'>Learn More</a>
+    </div>
+    <div class="col-3 features">
+      <i class="fa fa-heart"></i>
+      <p>
+        Check out our new ECG scans!
+      </p>
+      <a class="changecolor" href='https://www.medicalexpo.com/product-manufacturer/ge-ct-scanner-33726-438.html'>Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="section--primary--alt">
+  <div class="container">
+    <!--<h3>For more inform.</h3>-->
+    <p><center>For more information regarding GEmma, contact gemmahelpdesk@gmail.com</center></p>
+  </div>
+</section>
+
+  
+
+
+  
+<div id="chat-circle" class="btn btn-raised">
+        <!--<button value="" id="please"></button>-->
+        <div id="chat-overlay"></div>
+        <!--<p class="gemma">G</p>-->
+	<i class="material-icons md-48" id="chat_bubble"/>forum</i>
+  </div>
+  
+  <div class="chat-box">
+    <div class="chat-box-header">
+      <span class="askgemma">Ask GEmma!</span>
+      <i class="chat-box-toggle" class="close" class="material-icons">X</i>
+    </div>
+    <div class="chat-box-body">
+      <div class="chat-box-overlay">   
+      </div>
+      <div class="chat-logs">
+       
+      </div><!--chat-log -->
+    </div>
+    <div class="chat-input">      
+      <form>
+        <input type="text" id="chat-input" placeholder="Send a message..."/>
+      <!--<button type="submit" class="chat-submit" id="chat-submit"><p class="material-icons">send</p></button>-->
+      <button type="button" class="speech-submit"><i class="material-icons md-48" id="micro"/>micro</i></button>
+	<button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons md-48" id="send"/>send</i></button>
+      </form>      
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+
+
+
+
+
+    $(function() {
+
+      setTimeout(function() {      
+      hidepls();  
+    }, 3000)
+
+
+    function hidepls(){
+
+        $("#preloader").hide();
+        $('.whole').show();
+      }
+    
+  
+
+
+
+
+  /*var INDEX = 0; 
+  $(".gemma").onclick(function() {
+    var hello="Hello, I'm GEmma. I'm a service both that can answer any queries regarding GE products! A few of my domains are given below!";
+    window.alert(hello);
+    /*generate_message(hello,'user');})*/
+
+
+  /*function auto_message(msg, type) {
+    INDEX++;
+    var str="";
+    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+    str += "          <span class=\"msg-avatar\">";
+    str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+    str += "          <\/span>";
+    str += "          <div class=\"cm-msg-text\">";
+    if(type=='user'){
+      str+=hello;
+    }
+    if(type=='self'){
+      str += msg;
+    }
+    str += "          <\/div>";
+    str += "        <\/div>";
+    $(".chat-logs").append(str);
+    $("#cm-msg-"+INDEX).hide().fadeIn(300);
+    if(type == 'self'){
+     $("#chat-input").val(''); 
+    }    
+    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+  }*/  
+
+  var INDEX = 0; 
+  auto_message("Hello, I'm GEmma. I'm a service bot that can answer any queries regarding GE products! A few of my domains are given below!",'user');
+
+  function auto_message(msg, type) {
+    INDEX++;
+    var str="";
+    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+    str += "          <span class=\"msg-avatar\">";
+    /*str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";*/
+    str += "          <\/span>";
+    str += "          <div class=\"cm-msg-text\">";
+    if(type=='user'){
+      str+=msg;
+    }
+    if(type=='self'){
+      str += msg;
+    }
+    str += "          <\/div>";
+    str += "        <\/div>";
+    $(".chat-logs").append(str);
+    $("#cm-msg-"+INDEX).hide().fadeIn(300);
+    if(type == 'self'){
+     $("#chat-input").val(''); 
+    }    
+    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+  }  
+   
+
+   function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+
+  /*var internals="<div class='header1'>"+"<a class='one'>"+"One"+"</a>"+"  "+ "<a class='one'>"+"Two"+"</a>"+"  "+ "<a class='one'>"+"Three"+"</a>"+ "  "+ "<a class='one'>"+"Four"+"</a>" + "<a class='one'>"+"Four"+"</a>" + "<a class='one'>"+"Four"+"</a>" + "\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\"  /*internals+="<div class='header1'>"+"<a class='two'>"+"Two"+ "</a></div>";*/
+  /*$('.chat-logs').append(internals);*/
+
+
+  /*var internals="<span class='domain1'>Domain1</span";*/
+  $(".chat-logs").append("<br></br>");
+  $(".chat-logs").append("<br></br>");
+  $(".chat-logs").append("<br></br>");
+  
+  
+  var internals="<button type='submit' id='domain3' class='domain1'>Ultrasound</button>";
+  /*internals+="  ";
+  internals+="<span class='domain1' id='domain4'>Domain4</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain5'>Domain5</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain6'>Domain6</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain7'>Domain7</span>";
+*/  
+  
+
+  $(".chat-logs").append(internals);
+
+
+  var internals2="<button type='submit' id='domain2' class='domain1'>CT</button>";
+  /*internals+="  ";
+  internals+="<span class='domain1' id='domain4'>Domain4</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain5'>Domain5</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain6'>Domain6</span>";
+  internals+="  ";
+  internals+="<span class='domain1' id='domain7'>Domain7</span>";
+*/  
+  
+
+  $(".chat-logs").append(internals2);
+
+  var internals3="<button type='submit' id='domain1' class='domain1'>ECG</button>";
+  $(".chat-logs").append(internals3);
+
+
+  var internals4="<button type='submit' id='domain4' class='domain1'>X-Ray</button>";
+  $(".chat-logs").append(internals4);
+
+
+  /*$(document).ready(function(){
+   $("#domain1").on("click", "#domain1", function(){
+    alert("hi");
+      // The code to make everything bold
+   });
+});*/
+
+
+  var internals5="<button type='submit' id='domain5' class='domain1'>9100c</button>";
+  $(".chat-logs").append(internals5);
+
+  $("#domain5").click(function(e) {
+
+    generate_message("9100c", 'self');
+    generate_message("9100c",'user');
+
+  })
+
+
+  $("#domain4").click(function(e) {
+
+    generate_message("X-Ray", 'self');
+    generate_message("X-Ray",'user');
+
+  })
+
+
+  $("#domain1").click(function(e) {
+
+    generate_message("ECG", 'self');
+    generate_message("ECG",'user');
+
+  })
+
+
+
+  $("#domain3").click(function(e) {
+
+    generate_message("Ultrasound", 'self');
+    generate_message("Ultrasound",'user');
+
+  })
+
+  $("#domain2").click(function(e) {
+
+    generate_message("CT", 'self');
+    generate_message("CT",'user');
+
+  })
+
+  
+
+  $(".chat-logs").append("<br></br>");
+
+  
+  $("#chat-submit").click(function(e) {
+    e.preventDefault();
+    var msg = $("#chat-input").val(); 
+    if(msg.trim() == ''){
+      return false;
+    }
+    
+    generate_message(msg, 'self');
+    var buttons = [
+        {
+          name: 'Existing User',
+          value: 'existing'
+        },
+        {
+          name: 'New User',
+          value: 'new'
+        }
+      ];
+    setTimeout(function() {      
+      generate_message(msg, 'user');  
+    }, 1000)
+    
+  })
+
+  function runPyScript(input){
+        var jqXHR = $.ajax({
+            type: "POST",
+            url: "/command",
+            async: false,
+            data: { mydata: input }
+        });
+
+        return jqXHR.responseText;
+        
+
+
+  
+    }
+  
+  function generate_message(msg, type) {
+    INDEX++;
+    var str="";
+    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+    str += "          <span class=\"msg-avatar\">";
+    /*str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";*/
+    str += "          <\/span>";
+    str += "          <div class=\"cm-msg-text\">";
+    if(type=='user'){
+      /*"<p id='gemmatyping'>GEmma is typing...</p>"+*/
+      var typing="<div class='typing-indicator'>"+"<span></span><span></span><span></span></div>";
+      $(".chat-box-body").append(typing);
+      if(msg=='CT'){
+        str+='Our family of innovative CT products let you match a system to your exact imaging needs — so you can focus on better patient care.';
+      }
+      else if(msg=='X-Ray'){
+        str+='Our digital systems offer the latest in GE imaging advantages. Helping you make the first image count';
+      }
+      else if(msg=='ECG'){
+        str+='Whether you are performing a resting, stress or Holter cardiac examination, our extensive cardiology portfolio provides solutions that help meet your needs for accurate diagnosis and cardiology data management.';
+      }
+      else if(msg=='Ultrasound'){
+        str+='Every GE Healthcare ultrasound system is designed with you, your specialty, and your patients in mind.We are committed to providing technologies to help you excel every day.';
+
+      }
+      else if(msg=='9100c'){
+        str+='The 9100c NXT is the new upgraded platform of our gold standard product 9100c. This is ideal solution for customers seeking a precise, versatile and dependable anesthesia system and has neonatal capabilities and ventilation modes that make it a versatile choice for all hospitals.';
+      }
+      else{
+        var a=runPyScript(msg);
+        str+=a;
+    }}
+    if(type=='self'){
+      str += msg;
+    }
+  
+    str += "          <\/div>";
+    str += "        <\/div>";
+    if(type=="user"){
+      /*$(".chat-box-body").val().hide();*/
+      $('.typing-indicator').hide();
+    }
+    $(".chat-logs").append(str);
+    $("#cm-msg-"+INDEX).hide().fadeIn(300);
+    if(type == 'self'){
+     $("#chat-input").val(''); 
+    }    
+    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+  }  
+  
+  function generate_button_message(msg, buttons){    
+    /* Buttons should be object array*/ 
+      /*[
+        {
+          name: 'Existing User',
+          value: 'existing'
+        },
+        {
+          name: 'New User',
+          value: 'new'
+        }
+      ]*/
+    
+    INDEX++;
+    var btn_obj = buttons.map(function(button) {
+       return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
+    }).join('');
+    var str="";
+    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
+    str += "          <span class=\"msg-avatar\">";
+    /*str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";*/
+    str += "          <\/span>";
+    str += "          <div class=\"cm-msg-text\">";
+    str += msg;
+    str += "          <\/div>";
+    str += "          <div class=\"cm-msg-button\">";
+    str += "            <ul>";   
+    str += btn_obj;
+    str += "            <\/ul>";
+    str += "          <\/div>";
+    str += "        <\/div>";
+    $(".chat-logs").append(str);
+    $("#cm-msg-"+INDEX).hide().fadeIn(300);   
+    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+    $("#chat-input").attr("disabled", true);
+  }
+  
+  $(document).delegate(".chat-btn", "click", function() {
+    var value = $(this).attr("chat-value");
+    var name = $(this).html();
+    $("#chat-input").attr("disabled", false);
+    generate_message(name, 'self');
+  })
+  
+  $("#chat-circle").click(function() {    
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+  })
+  
+  $(".chat-box-toggle").click(function() {
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+  })
+  
+})
+    
+
+
+
+
+
+
+  </script>
+
+
+  
+        
+  
+  
+  
+  
+</div>
+</body>
+</html>

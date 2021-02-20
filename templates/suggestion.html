@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/suggestioncss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"/>
+  </head>
+<body>
+
+    <nav><a class="benefits" href="{{url_for('go')}}">Go Back</a><<a class="suggestions" href="#">Suggestions?
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 306 306">
+          <path d="M94.35 0l-35.7 35.7L175.95 153 58.65 270.3l35.7 35.7 153-153"></path>
+        </svg></a></nav>
+    <section class="suggestion-box">
+      <form action="#" method="POST" id="suggestion-box-form" role="form" aria-label="Suggestion Box">
+        <div class="user-info">
+          <div class="name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Name"/>
+          </div>
+          <div class="email">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail"/>
+          </div>
+        </div>
+        <div class="user-suggestion">
+          <div class="user-suggestion-box">
+            <label for="suggestion">Suggestion:</label>
+            <textarea placeholder="Suggestion" name="suggestion"></textarea>
+            <div class="user-suggestion-form-buttons">
+              <button type="Submit">Send</button>
+              <button type="Reset">Clear</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <br></br><br></br>
+    </section>
+
+
+    <script type="text/javascript">
+
+
+        (function () {
+  let nav = {
+    suggestionLink: document.querySelector('.suggestions'),
+    suggestionBox: document.querySelector('.suggestion-box'),
+    svg: document.querySelector('svg'),
+
+
+    init() {
+      nav.suggestionLink.addEventListener("click", function () {
+        nav.suggestionLink.classList.toggle('cancel');
+        nav.suggestionBox.classList.toggle("box-active");
+        nav.svg.classList.toggle('rotate');
+      });
+    } };
+
+  nav.init();
+})();
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

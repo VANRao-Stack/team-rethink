@@ -1,0 +1,60 @@
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title> help </title> 
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='3.css') }}">  
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>         
+    </head> 
+    <body>
+        <div align="right" class="border"> 
+            <div class="header"> 
+                <a href="{{ url_for('go') }}" class="btn">Go Back</a> 
+            </div> 
+        </div>
+
+        <div class="container">  
+          <form id="suggestion_box">
+            <h3>Suggestion box</h3>
+            <h5>Please give as much detail as you can and share examples if you have any</h5>
+            <div id="hide">Your suggestion has ben placed</div>
+            <fieldset>
+              <textarea placeholder="Suggestion" tabindex="5" name="suggestion_text" id="text" required></textarea>
+            </fieldset>
+            <div id="confirm"></div>
+            <fieldset>
+              <button name="submit" type="submit" id="suggestionbox" value="text to send">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+
+
+
+        <script type="text/javascript">
+
+
+
+
+
+    $(function() {
+
+
+
+      $("#suggestionbox").click(function(e) {
+    e.preventDefault();
+
+        $("#text").val("");
+        $("#hide").show();
+        window.onload = function(){
+        document.getElementById("#hide").style.display = "block";}
+
+
+    })
+
+
+
+
+
+    </body> 
+</html> 
